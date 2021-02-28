@@ -4,7 +4,6 @@
 #include "unidimentional_functions.h"
 
 
-//Functions of Bissect Algorithm
 
 
 double derivative(double x, double (*f)(double))
