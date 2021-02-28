@@ -99,6 +99,70 @@ double false_position(double x0, double x1, double (*f)(double), double tol) {
     }
     return x_next;
 }
+double Fn(int n) {
+    if (n == 0)
+        return 1;
+    if (n == 1)
+        return 1;
+    else
+        return Fn(n-1) + Fn(n - 2);
+}
+double* fibonacci(double a, double b, int N, double (*f)(double)) {
+    double* interval = (double*)malloc(2 * sizeof(double));;
+    double x = a;
+    double y = b;
+    int k = 1;
+    while (k <= N) {
+        double Xleft = x + (Fn(N - k) / Fn(N + 2 - k)) * (y - x);
+        double Yright = x + (Fn(N + 1 - k) / Fn(N + 2 - k)) * (y - x);
+        if ((*f)(Xleft) < (*f)(Yright))
+            y = Yright;
+
+        else if ((*f)(Xleft) > (*f)(Yright))
+            x = Xleft;
+
+        else{
+            y = Yright;
+            x = Xleft;
+            k++;
+        }
+        k++;
+    }
+    //if (fabs(y - x) < (b - a) / Fn(N + 1)) 
+     interval[0] = x; interval[1] = y;
+     return interval;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

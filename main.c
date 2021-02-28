@@ -23,7 +23,7 @@ double phi2(double x)
 int main()
 {
     int choice = 2;
-    printf("Choose which algorithm:\n1_ Bissection\n2_ Newton-Raphson\n3_ False Position\n");
+    printf("Choose which algorithm:\n1_ Bissection\n2_ Newton-Raphson\n3_ False Position\n4_ Fibonacci\n");
     printf("Your choice : ");
     scanf_s("%d", &choice);
     switch (choice)
@@ -50,6 +50,12 @@ int main()
         printf("Le resultat : %f", res2);
         break;
     }
+    case 4:
+    {
+        double* interval;
+        interval = (double*)malloc(2 * sizeof(double));
+        interval = fibonacci(-1, 1, 6, phi);
+        printf("Le resultat : %f_%f", interval[0], interval[1]);
     }
-
+    }
 }
