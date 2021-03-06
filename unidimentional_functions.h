@@ -10,6 +10,7 @@ double newton(double x0, double (*f)(double), double tol);
 double false_position(double x0, double x1, double (*f)(double), double tol);
 double Fn(int n);
 double* fibonacci(double a, double b, int N, double (*f)(double));
+
 //typedef struct interval_ {
 //	double a;
 //	double b;

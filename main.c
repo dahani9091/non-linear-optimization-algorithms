@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "unidimentional_functions.h"
+#include "multidimentional_functions.h"
 
 
 
@@ -19,9 +20,21 @@ double phi2(double x)
     return pow(x, 4) + 2 * pow(x, 2) + 1;
 }
 
+double f(int n,double* vector) {
+    return pow(vector[0],3) + pow(vector[1],5);
+        //x^3+y^5
+}
 
 int main()
 {
+    double* vect = (double*)malloc(2 * sizeof(double));
+    vect[0] = 1.0;
+    vect[1] = 7.0;
+    double* res = (double*)malloc(2 * sizeof(double));
+   
+    res = gradientOp(2, vect, f);
+    printf("%f , %f\n", res[0], res[1]);
+    /*
     int choice = 2;
     printf("Choose which algorithm:\n1_ Bissection\n2_ Newton-Raphson\n3_ False Position\n4_ Fibonacci\n");
     printf("Your choice : ");
@@ -58,4 +71,5 @@ int main()
         printf("Le resultat : %f_%f", interval[0], interval[1]);
     }
     }
+    */
 }

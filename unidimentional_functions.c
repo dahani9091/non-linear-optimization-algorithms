@@ -136,35 +136,6 @@ double* fibonacci(double a, double b, int N, double (*f)(double)) {
 
 
 
-
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 #include <stdio.h>
 #include <stdlib.h>
