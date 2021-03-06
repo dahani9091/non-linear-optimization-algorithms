@@ -2,7 +2,8 @@
 #ifndef MULTIDIMENTIONAL_FUNCTION_H
 #define MULTIDIMENTIONAL_FUNCTION_H
 
-/*the main function*/
+/********************* 1- Gradient descent ********************/
+
 double* gradient_descent(double* x0_vector, double tol, double (*f)(int, double*), int n);
 
 //gradient operator
@@ -33,4 +34,6 @@ double derivative_nd_for_g(double alpha, double* vector_xk, double (*f)(int, dou
 double* multi(double coef, double* vector, int n);
 // Substraction of two vectors
 double* subst(double* vector1, double* vector2, int n);
+
+/*************************************************************/
 #endif 
