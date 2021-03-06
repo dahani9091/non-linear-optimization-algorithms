@@ -21,19 +21,30 @@ double phi2(double x)
 }
 
 double f(int n,double* vector) {
-    return pow(vector[0],3) + pow(vector[1],5);
-        //x^3+y^5
+    return pow(4-pow(vector[0],2)-2*pow(vector[1],2),2)  ;
+    //return 0.5*(pow(vector[0], 2) + pow(vector[1], 2));
 }
 
 int main()
 {
     double* vect = (double*)malloc(2 * sizeof(double));
-    vect[0] = 1.0;
-    vect[1] = 7.0;
+    vect[0] = 0;
+    vect[1] = 1;
     double* res = (double*)malloc(2 * sizeof(double));
+    res = gradient_descent(vect, 0.001, f, 2);
+    double res2 = newton_for_g(0.8, 0.001, vect, f, 2);
+    double res1;
+    res1 = false_position_for_g(0.5, 1.5, 0.001, vect, f, 2);
+    printf("%f %f\n", res[0],res[1]);
+   /*
+    double* vect = (double*)malloc(2 * sizeof(double));
+    vect[0] = 1;
+    vect[1] = 2;
+    double res ;
    
-    res = gradientOp(2, vect, f);
-    printf("%f , %f\n", res[0], res[1]);
+    res = Norm(2,vect);
+    printf("%f \n",res);
+    */
     /*
     int choice = 2;
     printf("Choose which algorithm:\n1_ Bissection\n2_ Newton-Raphson\n3_ False Position\n4_ Fibonacci\n");
