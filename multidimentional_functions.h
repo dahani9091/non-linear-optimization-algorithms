@@ -37,3 +37,5 @@ double* subst(double* vector1, double* vector2, int n);
 
 /*************************************************************/
 #endif 
+
+//
