@@ -4,7 +4,7 @@
 #include "multidimentional_functions.h"
 
 
-//comment
+
 /*
    notes :
    n is the dimention of IR^n.
